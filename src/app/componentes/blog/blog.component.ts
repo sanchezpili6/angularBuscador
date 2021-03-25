@@ -26,7 +26,7 @@ export class BlogComponent implements OnInit {
   }
 
   publicar(){
-    var newPost = {nombre: this.blog.value[0], hora: new Date(), entrada: this.blog.value[1]}
+    var newPost = {nombre: this.blog[0], hora: new Date(), entrada: this.blog.value}
     this.posts.push(newPost);
     console.log(this.posts)
     console.log(this.blog.value);
