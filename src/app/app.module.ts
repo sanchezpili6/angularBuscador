@@ -1,16 +1,37 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { EncabezadoComponent } from './componentes/comunes/encabezado/encabezado.component';
+import { PrincipalComponent } from './componentes/principal/principal.component';
+import { AcercadeComponent } from './componentes/acercade/acercade.component';
+import { ConsolasComponent } from './componentes/consolas/consolas.component';
+import { APP_ROUTING } from './app.routes';
+import { InfoconsolaComponent } from './componentes/infoconsola/infoconsola.component';
+import { JuegosconsolaComponent } from './componentes/juegosconsola/juegosconsola.component';
+import { JuegoComponent } from './componentes/juego/juego.component';
+import { ConsolasService } from './servicios/consolas.service';
+import { ReconsolasComponent } from './componentes/buscador/reconsolas/reconsolas.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EncabezadoComponent,
+    PrincipalComponent,
+    AcercadeComponent,
+    ConsolasComponent,
+    InfoconsolaComponent,
+    JuegosconsolaComponent,
+    JuegoComponent,
+    ReconsolasComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    ConsolasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
