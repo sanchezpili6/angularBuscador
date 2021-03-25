@@ -13,6 +13,7 @@ import { JuegoComponent } from './componentes/juego/juego.component';
 import { ConsolasService } from './servicios/consolas.service';
 import { ResconsolasComponent } from './componentes/buscador/resconsolas/resconsolas.component';
 import { BlogComponent } from './componentes/blog/blog.component';
+import { BlogService } from './servicios/blog.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { BlogComponent } from './componentes/blog/blog.component';
     FormsModule
   ],
   providers: [
-    ConsolasService
+    ConsolasService,
+    BlogService
   ],
   bootstrap: [AppComponent]
 })

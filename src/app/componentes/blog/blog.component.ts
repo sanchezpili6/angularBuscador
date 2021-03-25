@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { BlogService, Posts} from '../../servicios/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,9 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class BlogComponent implements OnInit {
 
+  posts:Posts[]=[];
+
   blog:FormGroup;
 
-  constructor() { 
+  constructor( private blogService: BlogService ) { 
     this.blog = new FormGroup({
       'nombre': new FormControl('', [Validators.required, Validators.minLength(5)]),
       'entrada': new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(30)])
@@ -18,6 +21,8 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.posts = this.blogService.obtienePosts();
+    console.log(this.posts)
   }
 
   publicar(){
