@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-encabezado',
   templateUrl: './encabezado.component.html',
@@ -15,7 +14,7 @@ export class EncabezadoComponent implements OnInit {
 
   buscarConsolas(palabras:string){
     console.log(palabras);
-    this.router.navigate(['/reconsolas', palabras])
+    this.router.navigate(['/resconsolas', palabras]);
     }
 
 }

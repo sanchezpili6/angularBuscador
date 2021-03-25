@@ -7,7 +7,8 @@ import { ConsolasComponent } from './componentes/consolas/consolas.component';
 import { InfoconsolaComponent } from './componentes/infoconsola/infoconsola.component';
 import { JuegosconsolaComponent } from './componentes/juegosconsola/juegosconsola.component';
 import { JuegoComponent } from './componentes/juego/juego.component';
-import { ReconsolasComponent} from './componentes/buscador/reconsolas/reconsolas.component';
+import { ResconsolasComponent } from './componentes/buscador/resconsolas/resconsolas.component';
+import { BlogComponent } from './componentes/blog/blog.component';
 
 const APP_ROUTES: Routes = [
 
@@ -15,13 +16,14 @@ const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent },
   { path: 'acercade', component: AcercadeComponent },
   { path: 'consolas', component: ConsolasComponent },
+  { path: 'blog', component: BlogComponent},
 
   //{ path: 'consolas/infoconsola/id', component: InfoconsolaComponent }, cambia por:
   { path: 'infoconsola/:id', component: InfoconsolaComponent },
 
   { path: 'juegosconsola/:id', component: JuegosconsolaComponent },
   { path: 'juego/:idConsola/:idJuego', component: JuegoComponent },
-  { path: 'reconsolas/palabraBusqueda', component: ReconsolasComponent},
+  { path: 'resconsolas/:palabrasBusqueda', component: ResconsolasComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'principal' }
 
 ];
