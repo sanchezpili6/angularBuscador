@@ -26,10 +26,24 @@ export class BlogComponent implements OnInit {
   }
 
   publicar(){
-    var newPost = {nombre: this.blog[0], hora: new Date(), entrada: this.blog.value}
+    if(this.blog.valid){
+      var newPost = {nombre: this.blog.get('nombre').value, hora: new Date(), entrada: this.blog.get('entrada').value}
     this.posts.push(newPost);
-    console.log(this.posts)
     console.log(this.blog.value);
+    } else {
+      this.validateAllFormFields(this.blog);
+    }
+  }
+
+  validateAllFormFields(formGroup: FormGroup){
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if(control instanceof FormControl){
+        control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup ){
+        this.validateAllFormFields(control);
+      }
+    });
   }
 
 }
