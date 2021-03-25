@@ -30,7 +30,10 @@ export class BlogComponent implements OnInit {
       var newPost = {nombre: this.blog.get('nombre').value, hora: new Date(), entrada: this.blog.get('entrada').value}
     this.posts.push(newPost);
     console.log(this.blog.value);
+    this.blog.reset('nombre')
+    this.blog.reset('entrada')
     } else {
+      console.log("mete un nombre y una entrada válida")
       this.validateAllFormFields(this.blog);
     }
   }
